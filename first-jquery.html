@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>jQuery Referencing</title>
+    <!-- Add reference to latest jQuery file -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  			<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.2/umd/popper.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $("#btnClick").click(function(){
+                $("#myPara").css("background-color", "pink");
+            });    
+        });
+    </script>
+</head>
+<body>
+<p id="myPara">First jQuery</p>
+<button id="btnClick">Click Me!!!</button>
+</body>
+</html>

@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Events</title>
+    <style>
+        #box{
+            width:200px;
+            height:200px;
+            border:2px solid black;
+            background-color:purple;
+        }
+
+        #txtName{
+            font-size: 30px;
+        }
+        div{
+            color: blue;
+            font-size: 20px;
+        }
+    </style>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.2/umd/popper.min.js"></script>
+    <script type="text/javascript">
+       $(document).ready(function(){
+        //MOUSE EVENTS
+        //click
+            // $("#box").click(function(){
+            //     $(this).css("background-color", "pink");
+            // });
+            //double click
+            /*$("#box").dblclick(function(){
+                $(this).css("background-color", "pink");
+            });*/
+            //mouse enter
+            /*$("#box").mouseenter(function(){
+                $(this).css("background-color", "pink");
+            });*/
+            /*$("#box").mouseleave(function(){
+                $(this).css("background-color", "purple");
+            });*/
+            //hover for both mouse enter and mouse leave
+            /*$("#box").hover(function(){
+                    $(this).css("background-color", "pink");
+                }, function(){
+                   $(this).css("background-color", "purple"); 
+            });*/
+            /*$("#box").mousedown(function(){
+                $(this).css("background-color", "pink");
+            });
+            $("#box").mouseup(function(){
+                $(this).css("background-color", "green");
+            });*/
+
+            // KEYBOARD EVENTS
+
+            // $("#txtName").keydown(function(){
+            //     $(this).css("color", "red");
+            // });
+
+            // ("#txtName").keyup(function(){
+            //     $(this).css("color", "blue");
+            // });
+            /*FORM EVENTS*/
+            // FOCUS
+            /*$(":text").focus(function(){
+                $(this).css("background-color", "gray");
+            });
+            $(":text").blur(function(){
+                $(this).css("background-color", "white");
+            });*/
+            //focus in and focus out
+            // $("fieldset").focusin(function(){
+            //     $(this).css("background-color", "gray");
+            // });
+            // $("fieldset").focusout(function(){
+            //     $(this).css("background-color", "gray");
+            // });
+            // CHANGE
+            // $("select").change(function(){
+            //     $("#result").text($(this).val()).show().fadeOut(3000);
+            //     // $("#result").text($(this).val());
+            // });
+            //select only trigger for text input and text area
+            // $(":text").select(function(){
+            //     $("#result").text($(this).val()).show().fadeOut(3000);
+            //     // $("#result").text($(this).val());
+            // });
+            // form submit
+            // $("form").submit(function(){
+            //     alert($("#salutation").val() + ". "+$("[name=firstName]").val());
+            // });
+            /*BROWSER EVENTS*/
+            // $(window).resize(function(){
+            //     $("div").text("Width:"+ $(window).width() + "Height: "+ $(window).height());
+            // });
+            // var i =1;
+            // $(window).scroll(function(){
+            //     $("div").text("Scroll: " + i);
+            //     i++;
+            // });
+            //attach event
+            /*$("p").on("click", function(){
+                $(this).css("fontSize", "20px");
+            });*/
+            /*$("button").click(function(){
+                $("p").off("click");
+            });*/
+            /*$("p").on({click:function(){
+                    $(this).css("fontSize", "20px");
+                },
+                dblclick:function(){
+                     $(this).css("color", "red");
+            }});*/
+            /*var i = 1;
+            $("#btnClick").one("click", function(){
+                $("div").text(i);
+                i++;
+            });
+            $("#btnClick").on("click", function(){
+                $("div").text(i);
+                i++;
+            });*/
+            /* $("p").on("click", function(){
+                $(this).css("background-color", "pink");
+            });
+            $("p:first").click(function(){
+                $("p:last").trigger("click");
+            });*/
+        });      
+    </script>
+</head>
+
+<body>
+<form>
+    <div id="box"></div>
+    <br><br>
+    <input type="text" name="txtName">
+     <br><br>
+
+     <fieldset style="width: 400px">
+         <legend><b>Personal</b></legend>
+         Salutation:
+         <select id="salutation">
+             <option value="Mr">Mr.</option>
+             <option value="Miss">Miss.</option>
+             <option value="Ms">Ms.</option>
+             <option value="Mrs">Mrs.</option>
+         </select><br />
+         <input type="text" name="firstName" placeholder="First Name"><br />
+         <input type="text" name="lastName" placeholder="Last Name"><br />
+         <input type="submit" id="btnSubmit" value="Submit" ><br />
+         <div id="result"></div>
+     </fieldset>
+ <br><br>
+<div></div>
+<p>My Paragraph.</p>
+<p>My Paragraph.</p>
+<p>My Paragraph.</p>
+<p>My Paragraph.</p>
+<p>My Paragraph.</p>
+<p>My Paragraph.</p>
+<p>My Paragraph.</p>
+<p>My Paragraph.</p>
+<p>My Paragraph.</p>
+<p>My Paragraph.</p>
+<p>My Paragraph.</p>
+<p>My Paragraph.</p>
+<p>My Paragraph.</p>
+<p>My Paragraph.</p>
+<p>My Paragraph.</p>
+<p>My Paragraph.</p>
+
+<div></div>
+<p>First Paragraph</p>
+<p>Second Paragraph</p>
+<button id="btnClick">Click</button>
+</body>
+</html>
+
+
+

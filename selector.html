@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Selectors</title>
+    <!-- Add reference to latest jQuery file -->
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.2/umd/popper.min.js"></script>
+    <script type="text/javascript">
+       $(document).ready(function(){
+            $("#btnFirst").click(function(){   
+            // all selector     
+                $("*").css("background-color", "pink");   
+            // tagname selector  
+                $("p").css("background-color", "yellow");   
+                $("li").css("background-color", "green");
+             // multiple selector 
+             $("ol, #secondPara").css("background-color", "red");   
+             // id selector 
+             $("#sub1").css("color", "blue");  
+             // class selector 
+             $(".subject").css("color", "yellow");   
+             $(".odd").css("background-color", "lightblue");   
+             $(".even").css("background-color", "cyan");   
+             // this selector 
+             $(this).css("color", "blue"); 
+            });       
+        })
+    </script>
+</head>
+<body>
+<ol class="subject">
+    <li id="sub1">English</li>
+    <li id="sub2">Mathematics</li>
+    <li id="sub3">Physics</li>
+    <li id="sub4">Chemistry</li>
+    <li id="sub5">History</li>
+    <li id="sub6">Geography</li>
+</ol>
+<ul id="department">
+    <li>Sales</li>
+    <li>HR</li>
+    <li>Marketing</li>
+    <li>Accounts</li>
+</ul>
+<p id="firstPara">First Paragraph. First Paragraph. First Paragraph. First Paragraph. First Paragraph.</p>
+<p id="secondPara">Second Paragraph. Second Paragraph. Second Paragraph. Second Paragraph. Second Paragraph.</p>
+<button id="btnFirst">First Button</button>
+<button id="btnSecond">Second Button</button>
+<style type="text/css">
+    
+table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+td, th {
+  border: 1px ;
+  text-align: left;
+  padding: 8px;
+}
+
+
+</style>
+<table>
+  <tr>
+    <th>Company</th>
+    <th>Contact</th>
+    <th>Country</th>
+  </tr>
+  <tr>
+    <td class="odd">Alfreds Futterkiste</td>
+    <td class="even">Maria Anders</td>
+    <td class="odd">Germany</td>
+  </tr>
+  <tr>
+    <td class="odd">Centro comercial Moctezuma</td>
+    <td class="even">Francisco Chang</td>
+    <td class="odd">Mexico</td>
+  </tr>
+  <tr>
+    <td class="odd">Ernst Handel</td>
+    <td class="even">Roland Mendel</td>
+    <td class="odd">Austria</td>
+  </tr>
+  <tr>
+    <td class="odd">Island Trading</td>
+    <td class="even">Helen Bennett</td>
+    <td class="odd">UK</td>
+  </tr>
+  <tr>
+    <td class="odd">Laughing Bacchus Winecellars</td>
+    <td class="even">Yoshi Tannamuri</td>
+    <td class="odd">Canada</td>
+  </tr>
+  <tr>
+    <td class="odd">Magazzini Alimentari Riuniti</td>
+    <td class="even">Giovanni Rovelli</td>
+    <td class="odd">Italy</td>
+  </tr>
+</table>
+
+<br><br>
+<script type="text/javascript">
+    $(document).ready(function(){
+        // focus method
+        $('input').focus(function(){
+            $(this).css("background-color","lightgray");
+        });
+        $('input').blur(function(){
+            $(this).css("background-color","white");
+        });
+
+        // attribute selector
+        $("#btnClick").click(function(){
+            // class attributes
+            $("[class]").css("color","red");
+            // specific id attributes
+            $("[id=firstDiv]").css("color","black");
+            // id with the value start with is ^= bla bla attributes
+            $("[id^=first]").css("color","grey");
+            // id with the value end with is $= bla bla attributes
+            $("[id$=th]").css("color","pink");
+            // id with the value contain specific char with is *= bla bla attributes
+            $("[id*=first]").css("color","yellow");
+            // use or /| for id with the value start with keyword or with keyword 
+            $("[id|=first]").css("color","yellow");
+             // use ~ for id with the value with keyword or has keyword eg id=first para or id = first
+            $("[id~=first]").css("color","yellow");
+        });
+    });
+</script>
+<label for="fName">First Name</label>
+<input type="text" name="fName"> <br>
+<label for="lName">Last Name</label>
+<input type="text" name="lName"> <br>
+
+<br>
+
+<p id="first-para" class="paras">First Paragraph. First Paragraph.</p>
+<p id="Second-para" class="paras">Second Paragraph. Second Paragraph.</p>
+<p id="Third-para" class="paras">Third Paragraph. Third Paragraph.</p>
+
+<div id="firstDiv">First Div</div>
+<div id="SecondDiv" class="divs">Second Div</div>
+<div id="DivFourth">Fourth Div</div>
+<div id="DivFifth" class="divs">Fifth Div</div>
+<button id="btnClick">Click!!!</button>
+</body>
+</html>
+
+
+

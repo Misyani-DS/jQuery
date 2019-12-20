@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Selectors</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.2/umd/popper.min.js"></script>
+     
+
+    <script type="text/javascript">
+       $(document).ready(function(){
+            $("#btnClick").click(function(){
+                // form type selector start with :
+                // input selector
+                // alert("There are " + $(':input').length + " inputs in this webpage.");
+                // alert("There are " + $(':text').length + " text inputs in this webpage.");
+                //alert("There is/are " + $(':password').length + " password input(s) in this webpage.");
+                //alert("There is/are " + $(':image').length + " image input(s) in this webpage.");
+                //alert("There is/are " + $(':radio').length + " radio input(s) in this webpage.");
+                //alert("There is/are " + $(':checkbox').length + " checkbox(es) in this webpage.");
+                //alert("There is/are " + $(':file').length + " file(s) in this webpage.");
+                //alert("There is/are " + $(':button').length + " button(s) in this webpage.");
+                //alert("There is/are " + $(':reset').length + " reset button(s) in this webpage.");
+                // state selector
+                // $(":hidden").show(2000);
+                // $(":visible").hide(2000);
+                // $(":disabled").hide(2000);
+                // $(":enabled").hide(2000);
+                // forall the check input eg checkbox, select box,radio button
+                // $(":checked").hide(2000);
+                // apply only on select option
+                // $(":selected").hide(2000);
+                $(":animated").hide(2000);
+            });
+        });
+    </script>
+</head>
+<body>
+   <!--  <label for="name">Name:</label>
+    <input type="text" id="user" /><br />
+    <label for="uName">User Name:</label>
+    <input type="text" id="uName" disabled /><br />
+    <label for="pwd">Password</label>
+    <input type="password" id="pwd" /><br />
+    <label for="gender">Gender:</label>
+    <input type="radio" name="sex" value="m" checked>Male
+    <input type="radio" name="sex" value="f">Female<br />
+    <label for="appliances">Home appliances you own:</label><br />
+    <select name="appliances" multiple="multiple">
+        <option selected>Refrigerator</option>
+        <option>Washing Machine</option>
+        <option>Microwave Oven</option>
+    </select><br />
+    <label for="flower">Which flower you like?</label>
+    <input type="checkbox" name="flower" value="dahlia">Dahlia
+    <input type="checkbox" name="flower" value="tulips" checked>Tulips<br />
+    <input type="image" src="dahlia.jpg">
+    <input type="image" src="tulips.jpg"><br />
+    <input type="reset" value="Reset"> 
+    <button id="btnClick">Submit</button> -->
+
+<!-- animated  -->
+    <style type="text/css">
+         div{
+            width: 100px;
+            height: 100px;
+            background-color: pink;
+            margin: 5px;
+            padding: 5px;
+
+         }
+     </style>
+     <script type="text/javascript">
+         
+       $(document).ready(function(){
+        function animating(){
+            $("#box").slideToggle(5000);
+        }
+        animating();
+            $("#btnClick").click(function(){
+                $("div:animated").css("background-color","purple");
+            });
+        });
+    </script>
+    <div></div>
+    <div id="box"></div>
+    <div></div>
+    <button id="btnClick">Submit</button>
+     
+</body>
+</html>
+
+
+

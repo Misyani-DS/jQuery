@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Selectors</title>
+    <style>
+        .style{
+            border:2px solid black;
+            width:35%;
+            height:100px;
+            padding:10px;
+            margin:10px;
+        }
+        p{
+            border:1px solid red;
+            background-color:pink;
+            width:80px;
+            height:80px;
+            float:left;
+            padding:5px;
+            margin:5px;
+        }
+        span{
+            border:1px solid blue;
+            background-color:lightblue;
+            width:40px;
+            height:40px;
+            float:left;
+            padding:5px;
+            margin:5px;
+        }
+        .first{
+            border:1px solid gray;
+            background-color:silver;
+            width:60px;
+            height:60px;
+            float:left;
+            padding:5px;
+            margin:5px;
+        }
+    </style>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.2/umd/popper.min.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function(){
+            /*child selector
+            1. direct child selector
+            2. descendent selector
+            sibling selector
+            1. adjacent sibling selector
+            2. general sibling selector*/
+            $("#btnClick").click(function(){
+                // direct child selector
+               // $("div > span").hide(2000);
+               //$("div > p").hide(2000);
+               // descendent selector
+               // $("div span").hide(2000);
+               // adjacent sibling selector:direct
+               // $("p + span").hide(2000);
+               // general sibling selector
+               $("p ~ span").hide(2000);
+            });
+        });
+    </script>
+</head>
+<body>
+    <div id="main" class="style">
+        <p>Paragraph</p>
+        <span>Span</span>            
+        <div class="first">Div</div>
+        <span>Span</span>
+    </div>
+    
+   <div id="sub" class="style">
+        <p>Paragraph</p>
+        <span>Span</span>
+        <div class="first">Div</div>
+        <p>Paragraph<span>Span inside</span></p>
+        <div>
+          <span>Span</span>  
+        </div>        
+   </div> <br />    
+    <button id="btnClick">Click!!!</button>
+</body>
+</html>
+
+
+

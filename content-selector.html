@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Selectors</title>
+    <style>
+        .style{
+            border:2px solid black;
+            width:35%;
+            height:100px;
+            padding:10px;
+            margin:10px;
+        }
+        p{
+            border:1px solid red;
+            background-color:pink;
+            width:80px;
+            height:80px;
+            float:left;
+            padding:5px;
+            margin:5px;
+        }
+        span{
+            border:1px solid blue;
+            background-color:lightblue;
+            width:40px;
+            height:40px;
+            float:left;
+            padding:5px;
+            margin:5px;
+        }
+        .first{
+            border:1px solid gray;
+            background-color:silver;
+            width:60px;
+            height:60px;
+            float:left;
+            padding:5px;
+            margin:5px;
+        }
+    </style>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+     <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.2/umd/popper.min.js"></script> -->
+    <script type="text/javascript">
+        $(document).ready(function(){
+            $("#btnClick").click(function(){
+                // $("p:contains(First)").css("background-color", "red");
+                // $("p:contains(first)").css("background-color", "pink");
+                // $("span:contains(First)").css("background-color", "green");
+                // $("p:has(span)").css("background-color", "yellow");
+                $(":empty").css("background-color", "blue");
+                // $(":parent").css("background-color", "black");
+                // $(":parent").css("color", "orange");
+                // $(":not(:parent)").css("background-color", "purple");
+            });
+        });
+    </script>
+</head>
+
+<body>
+    <div id="main" class="style">
+        <p>First Paragraph</p>
+        <span>First Span</span>            
+        <div class="first"></div>
+        <span>Second Span</span>
+    </div>
+    
+   <div id="sub" class="style">
+        <p>First Paragraph</p>
+        <span>First Span</span>
+        <div class="first">First Div</div>
+        <p>Second Paragraph<span>Span inside</span></p>
+        <div>
+          <span>Span Inside</span>  
+        </div>        
+   </div> <br />    
+    <button id="btnClick">Click!!!</button>
+</body>
+</html>
+
+
+
