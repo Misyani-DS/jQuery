@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Five Star Rating</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<style type="text/css">
+		#container
+    {
+        width:400px;
+        height:250px;
+        margin:50px auto;
+    }
+    ul
+    {
+        padding:0px;
+        margin:0px;
+    }
+    li
+    {
+        display:inline-block;
+        font-size: 35px;
+        padding:10px;
+        color:#CCC;
+    }
+    #message
+    {
+        font-size:25px;
+    }
+    .hovered-stars
+    {
+        color:#FFCC36;
+    }
+    .clicked-stars
+    {
+        color:sandybrown;
+    }
+	</style>
+	<script type="text/javascript">
+		$(document).ready(function(){
+			$("li").mouseover(function(){
+				var current = $(this);
+				$("li").each(function(index){
+					$(this).addClass("hovered-stars");
+					if(index == current.index())
+                {
+                    return false;
+                }
+				});
+			});
+
+			$("li").mouseleave(function(){
+            $("li").removeClass("hovered-stars");
+        	});
+
+        	$("li").click(function(){
+            $("li").removeClass("clicked-stars");
+            $(".hovered-stars").addClass("clicked-stars");
+            $("#message").html("Thanks! You have rated this " + $(".clicked-stars").length + " star(s).")
+        	});
+
+		});
+	</script>
+</head>
+<body>
+	<div id="container">
+		<ul>
+		<li><i class="fa fa-star fa-fw"></i></li>
+		<li><i class="fa fa-star fa-fw"></i></li>
+		<li><i class="fa fa-star fa-fw"></i></li>
+		<li><i class="fa fa-star fa-fw"></i></li>
+		<li><i class="fa fa-star fa-fw"></i></li>
+		</ul>
+		<div id="message">Please rate your overall experience!</div>
+	</div>
+	
+</body>
+</html>

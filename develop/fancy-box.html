@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<script type="text/javascript" src="jquery.fancybox.js"></script>
+<link rel="stylesheet" type="text/css" href="jquery.fancybox.css" />
+<title>Fancy Box</title>
+<style>
+   #thumbs{
+	  width:850px;
+	  height:150px;
+	  margin:200px auto;
+   }
+   #thumbs img
+   {
+	  width:150px;
+	  height:150px;
+	  border:2px solid gray;
+	  margin:5px;
+   }
+</style>
+<script>
+   var imgArr = [
+				  "flo2.jpg",
+				  "flo3.jpg",
+				  "flo5.jpg",
+				  "flo6.jpg",
+				  "flo7.jpg"
+			   ];
+	$(document).ready(function(){
+		$.each(imgArr, function(index, value){
+			$("#thumbs").append("<a rel='mygallery' class='fancy' href='" + value + "'><img src='" + value + "' /></a>");
+			$(".fancy").fancybox({
+				  padding:0,
+				  helpers:{overlay:{css:{'background':'pink'}}}
+			   });
+	    });
+	});		
+</script>
+</head>
+<body>
+   <div id="thumbs"></div>
+</body>
+</html>
+
+   
