@@ -1,0 +1,116 @@
+<html>
+<head>
+<title>Type Writing</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>   
+<script src="https://cdnjs.cloudflare.com/ajax/libs/typed.js/1.1.1/typed.min.js"></script>
+<style>
+	#inputText
+	{
+		margin-bottom: 12px;
+	}
+</style>
+</head>
+<body>
+	<div id="inputText">
+		<input type="text" id="textBox" placeholder="Type anything..." />
+		<button id="btnType" >Type</button>
+		<button id="btnErase" >Erase</button>
+	</div>
+	<p id="screen">C:\|</p>
+  <!-- <span class="element"></span> -->
+</body>
+<script>
+    var i;
+    var j;
+    $(document).ready(function(){
+    	/*$("#btnType").click(function(){
+    		var input = $("#textBox").val();
+			$(input).typewrite({
+				'delay':100,
+				'extra_char': '',
+				'callback':null
+			});
+    	});*/
+      $("#btnType").click(function(){
+        i = 0;
+        typeWrite();
+      });
+
+      $("#btnErase").click(function(){
+        j = 0;
+        eraseWrite();
+      });
+     
+    });
+
+    function typeWrite(){
+      var input = $("#textBox").val();
+      var htmlScreen = $("#screen").html();
+      console.log(input);
+      if (i < input.length){
+        $("#screen").append(input.charAt(i));
+        i++;
+        setTimeout(typeWrite, 100);
+      }
+    }
+// var elements = $('.elementClass');
+// var reversedIndex = (elements.length -elements.index(this))+1;
+    function eraseWrite(){
+      var htmlScreen = $("#screen").val();
+      var input = $("#textBox").val();
+      // var newInput = input.split("").reverse().join("");
+      // var len = $("#screen").html().length;
+      // console.log(newInput);
+      // console.log((input.indexOf() ));
+      if (j <= input.length){
+      // console.log(newInput.charAt(j));
+      // console.log(j);
+      // console.log($("#screen").html("C:\\|"+input.substr(len)));
+        // $("#screen").html("C:\\|"+input.substr(j))
+        // $("#screen").html("C:\\|"+input.slice(j))
+        // $("#screen").html("C:\\|"+input.substr(len))
+        // j++;
+        // setTimeout(eraseWrite, 100);
+      // }
+      // for (j = input.indexOf(); j <= input.length; j--) {
+        // console.log(j);
+        // j = -1;
+        $("#screen").html("C:\\|"+input.substr(j))
+        setTimeout(eraseWrite, 100);
+        j++;
+      }
+    }
+
+    /*var i = 0;
+function typeWriter() {
+var txt = document.getElementById("textBox").value;
+var speed = 50;
+	console.log(txt);
+  if (i < txt.length) {
+    document.getElementById("screen").innerHTML += txt.charAt(i);
+    i++;
+    setTimeout(typeWriter, speed);
+  }
+}
+
+function eraseWriter() {
+var j = document.getElementById("textBox").value.length - 1;
+var txt = document.getElementById("textBox").value;
+var speed = 50;
+  if (j >= txt.length) {
+    document.getElementById("screen").innerHTML -= txt.charAt(j);
+    console.log(document.getElementById("screen").innerHTML);
+    j--;
+    setTimeout(eraseWriter, speed);
+  }
+}*/
+</script>
+<!-- <script type="text/javascript">
+  $(function(){
+  $(".element").typed({
+    strings: ["Typed.js is a jQuery plugin that types.", "Enter in any string,", "and watch it type at the speed you've set,", "backspace what it's typed,", "and begin a new sentence for however many strings you've set."],
+    typeSpeed: 0
+  });
+  });
+</script> -->
+</html>

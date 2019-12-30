@@ -24,15 +24,15 @@
 				  "flo2.jpg",
 				  "flo3.jpg",
 				  "flo5.jpg",
-				  "flo6.jpg",
-				  "flo7.jpg"
+				  "flo4.jpg",
+				  "flo8.jpg"
 			   ];
 	$(document).ready(function(){
 		$.each(imgArr, function(index, value){
 			$("#thumbs").append("<a rel='mygallery' class='fancy' href='" + value + "'><img src='" + value + "' /></a>");
 			$(".fancy").fancybox({
 				  padding:0,
-				  helpers:{overlay:{css:{'background':'pink'}}}
+				  helpers:{overlay:{css:{'background':'white'}}}
 			   });
 	    });
 	});		
